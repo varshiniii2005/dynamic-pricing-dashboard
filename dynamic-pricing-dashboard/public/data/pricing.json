@@ -1,0 +1,43 @@
+{
+  "plans": [
+    {
+      "id": 1,
+      "name": "Basic",
+      "recommended": false,
+      "price": { "monthly": 10 },
+      "features": [
+        "Essential tools to launch faster",
+        "Responsive email assistance",
+        "Secure 1GB cloud storage",
+        "Community collaboration space",
+        "Real-time usage insights"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Standard",
+      "recommended": true,
+      "price": { "monthly": 20 },
+      "features": [
+        "Everything in Basic + more power",
+        "Priority support",
+        "10GB high-speed storage",
+        "Advanced performance analytics",
+        "Enhanced security protection"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Premium",
+      "recommended": false,
+      "price": { "monthly": 35 },
+      "features": [
+        "Full premium feature access",
+        "24/7 expert support",
+        "Unlimited storage",
+        "Custom enterprise integrations",
+        "AI-powered automation tools"
+      ]
+    }
+  ]
+}
