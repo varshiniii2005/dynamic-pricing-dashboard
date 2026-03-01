@@ -244,6 +244,10 @@ Varshini Yadav Nasaram
 GitHub: https://github.com/varshiniii2005
 
 ---
+## 🔗 Live Demo
+
+Check out the live demo of the project here:  
+👉 https://dynamicpricing-dashboard.vercel.app/
 
 ## License
 
