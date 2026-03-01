@@ -1,16 +1,26 @@
 import "../App.css";
 
 const PricingCard = ({ plan, billing, currency, rate }) => {
-  const basePrice =
-    billing === "monthly"
-      ? plan.price.monthly
-      : plan.price.yearly;
 
-  const convertedPrice = basePrice * rate;
+  // ✅ Ensure monthly price is always a number
+  const monthlyPrice = Number(plan?.price?.monthly || 0);
+
+  // ✅ Ensure rate is always a number (fallback = 1)
+  const safeRate = Number(rate || 1);
+
+  // ✅ Calculate base price safely
+  let basePrice = monthlyPrice;
+
+  if (billing === "yearly") {
+    basePrice = monthlyPrice * 12 * 0.8; // 20% discount
+  }
+
+  // ✅ Final converted price (never NaN)
+  const convertedPrice = (basePrice * safeRate).toFixed(2);
 
   return (
     <div className={`card ${plan.recommended ? "recommended" : ""}`}>
-      
+
       {plan.recommended && <div className="badge">Recommended</div>}
 
       <h2>{plan.name}</h2>
@@ -27,6 +37,7 @@ const PricingCard = ({ plan, billing, currency, rate }) => {
       </ul>
 
       <button>Select Plan</button>
+
     </div>
   );
 };
