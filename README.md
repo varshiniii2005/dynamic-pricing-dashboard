@@ -112,6 +112,112 @@ To preview the production build:
 npm run preview
 ```
 
+## Design Decisions and Trade-offs
+
+This project was built with clarity, scalability, and performance in mind. Below are the key design decisions and the trade-offs considered during development.
+
+### 1. Component-Based Architecture
+
+**Decision:**  
+The application is divided into reusable components such as:
+- `PricingCard`
+- `BillingToggle`
+- `CurrencySelector`
+
+**Why:**  
+This improves maintainability, readability, and scalability. Each component has a single responsibility.
+
+**Trade-off:**  
+More files and slightly more setup complexity compared to a single-file implementation, but significantly better long-term maintainability.
+
+---
+
+### 2. JSON-Based Pricing Data
+
+**Decision:**  
+Pricing information is stored in a separate `pricing.json` file.
+
+**Why:**  
+- Separates data from UI logic  
+- Makes it easier to update pricing without modifying components  
+- Simulates real-world API-based data handling  
+
+**Trade-off:**  
+Currently static data. In a production system, this would typically come from a backend API.
+
+---
+
+### 3. State Management Using React Hooks
+
+**Decision:**  
+Used React `useState` for managing:
+- Billing cycle (monthly/yearly)
+- Selected currency
+
+**Why:**  
+Hooks provide a clean and simple way to manage local component state without introducing additional libraries.
+
+**Trade-off:**  
+For larger applications, a global state management solution (Redux, Context API) may be more appropriate.
+
+---
+
+### 4. Vite for Development Environment
+
+**Decision:**  
+Used Vite instead of Create React App.
+
+**Why:**  
+- Faster development server startup  
+- Improved build performance  
+- Lightweight configuration  
+
+**Trade-off:**  
+Slightly less beginner familiarity compared to Create React App.
+
+---
+
+### 5. CSS for Styling
+
+**Decision:**  
+Used standard CSS instead of UI libraries or frameworks.
+
+**Why:**  
+- Full control over styling  
+- Keeps dependencies minimal  
+- Lightweight bundle size  
+
+**Trade-off:**  
+More manual styling effort compared to using frameworks like Tailwind or Material UI.
+
+---
+
+### 6. Client-Side Currency Handling
+
+**Decision:**  
+Currency conversion is handled on the client side.
+
+**Why:**  
+- Faster interaction  
+- No need for API calls  
+- Suitable for demonstration purposes  
+
+**Trade-off:**  
+Conversion rates are static and not real-time. In production, rates should be fetched from a reliable financial API.
+
+---
+
+## Summary
+
+The overall goal was to create a clean, modular, and scalable pricing dashboard while keeping the architecture simple and easy to understand.
+
+The trade-offs made favor:
+- Simplicity over complexity  
+- Readability over optimization  
+- Demonstration value over production-level backend integration  
+
+This approach makes the project ideal for learning, showcasing frontend skills, and portfolio presentation.
+
 ---
 
 ## How It Works
