@@ -240,7 +240,7 @@ This approach makes the project ideal for learning, showcasing frontend skills, 
 
 ## Author
 
-Your Name  
+Varshini Yadav Nasaram
 GitHub: https://github.com/varshiniii2005
 
 ---
